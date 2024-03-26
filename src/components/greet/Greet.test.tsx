@@ -40,16 +40,19 @@ describe("Greet", () => {
 //   });
 // });
 
-
 // we can also have several describe methods in a single file
-describe('first', () => { test("renders with a name", () => {
-    render(<Greet name="Krishna" />);
-    const textElement = screen.getByText("Hello Krishna");
-    expect(textElement).toBeInTheDocument();
-  }); })
+// describe("first", () => {
+//   test("renders with a name", () => {
+//     render(<Greet name="Krishna" />);
+//     const textElement = screen.getByText("Hello Krishna");
+//     expect(textElement).toBeInTheDocument();
+//   });
+// });
 
-  describe('second', () => { test("renders correctly", () => {
-    render(<Greet />);
-    const textElement = screen.getByText(/hello/i);
-    expect(textElement).toBeInTheDocument();
-  }); })
+// describe("second", () => {
+//   test("renders correctly", () => {
+//     render(<Greet />);
+//     const textElement = screen.getByText(/hello/i);
+//     expect(textElement).toBeInTheDocument();
+//   });
+// });
