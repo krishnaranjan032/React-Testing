@@ -23,7 +23,7 @@ describe("Skills", () => {
     expect(loginButton).toBeInTheDocument();
   });
 
-  test("renders Start learning button", () => {
+  test("not renders Start learning button", () => {
     render(<Skills skills={skills} />);
     // const startLearningButton = screen.getByRole("button",{     // here the problem arises getByROle throws error when they dont find document in the dom
     const startLearningButton = screen.queryByRole("button", {      // in place of getBy we use queryBy as it return null not an error
@@ -31,4 +31,19 @@ describe("Skills", () => {
     });
     expect(startLearningButton).not.toBeInTheDocument();
   });
+
+  test('Start Learning button is eventually displayed', async () => {
+    render(<Skills skills={skills} />)
+    const startLearningButton = await screen.findByRole(
+      'button',
+      {
+        name: 'Start learning',
+      },
+      {
+        timeout: 2000,
+        
+      }
+    )
+    expect(startLearningButton).toBeInTheDocument()
+  })
 });
