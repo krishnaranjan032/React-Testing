@@ -9,6 +9,7 @@ describe("Skills", () => {
     expect(listElement).toBeInTheDocument();
   });
 
+
   test("renders a list of skills", () => {
     render(<Skills skills={skills} />);
     const listItemElements = screen.getAllByRole("listitem");
@@ -23,7 +24,7 @@ describe("Skills", () => {
     expect(loginButton).toBeInTheDocument();
   });
 
-  test("not renders Start learning button", () => {
+  // test("not renders Start learning button", () => {
   test("not renders Start learning button", () => {
     render(<Skills skills={skills} />);
     // const startLearningButton = screen.getByRole("button",{     // here the problem arises getByROle throws error when they dont find document in the dom
@@ -49,4 +50,4 @@ describe("Skills", () => {
     expect(startLearningButton).toBeInTheDocument();
   });
 })
-})
+
