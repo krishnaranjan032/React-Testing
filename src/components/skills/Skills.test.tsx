@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react'
-import { Skills } from './Skills'
+import { render, screen } from "@testing-library/react";
+import { Skills } from "./Skills";
 
 describe("Skills", () => {
   const skills = ["HTML", "CSS", "JavaScript"];
@@ -13,5 +13,22 @@ describe("Skills", () => {
     render(<Skills skills={skills} />);
     const listItemElements = screen.getAllByRole("listitem");
     expect(listItemElements).toHaveLength(skills.length);
+  });
+
+  test("renders Login button", () => {
+    render(<Skills skills={skills} />);
+    const loginButton = screen.getByRole("button", {
+      name: "Login",
+    });
+    expect(loginButton).toBeInTheDocument();
+  });
+
+  test("renders Start learning button", () => {
+    render(<Skills skills={skills} />);
+    // const startLearningButton = screen.getByRole("button",{     // here the problem arises getByROle throws error when they dont find document in the dom
+    const startLearningButton = screen.queryByRole("button", {      // in place of getBy we use queryBy as it return null not an error
+      name:'Start Learning'
+    });
+    expect(startLearningButton).not.toBeInTheDocument();
   });
 });
