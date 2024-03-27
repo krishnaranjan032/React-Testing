@@ -24,6 +24,7 @@ describe("Skills", () => {
   });
 
   test("not renders Start learning button", () => {
+  test("not renders Start learning button", () => {
     render(<Skills skills={skills} />);
     // const startLearningButton = screen.getByRole("button",{     // here the problem arises getByROle throws error when they dont find document in the dom
     const startLearningButton = screen.queryByRole("button", {
@@ -47,4 +48,5 @@ describe("Skills", () => {
     );
     expect(startLearningButton).toBeInTheDocument();
   });
-});
+})
+})
