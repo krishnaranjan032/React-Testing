@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { Counter } from './Counter'
-  import user from '@testing-library/user-event'
+import user from '@testing-library/user-event'
 
 describe('Counter', () => {
   test('renders correctly', () => {

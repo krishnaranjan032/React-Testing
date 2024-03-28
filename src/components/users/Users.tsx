@@ -14,6 +14,7 @@ export const Users = () => {
       <h1>Users</h1>
       {error && <p>{error}</p>}
       <ul>
+        
         {users.map((user) => (
           <li key={user}>{user}</li>
         ))}
